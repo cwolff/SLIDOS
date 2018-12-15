@@ -1,0 +1,119 @@
+
+
+
+
+; *************************************************************************
+; *                                                                       *
+; *                       Wordvision Boot System                          *
+; *                                                                       *
+; *             (C)opyright 1983 Software Laboratories Inc.               *
+; *                                                                       *
+; *                    Author - Cameron L. Wolff MSCS                     *
+; *                                                                       *
+; *************************************************************************
+
+                         Wordvision Boot System Overview
+
+
+   Purpose of this system is to permit the user to create a WORKING copy of
+
+Wordvision immediately by inserting their Wordvision MASTER disk.
+
+
+
+   The materials required are 1) Wordvision MASTER disk  2) IBM PC DOS disk
+
+3) WORKING disk (may be bland or contain files).
+
+
+
+   The Wordvision MASTER disk can only be duplicated by a diskcopy. It is
+
+strongly suggested that the user makes a backup copy of their Wordvision
+
+MASTER disk and that both are stored away for safe keeping.
+
+
+   The Wordvision Boot System consist of three seperate programs. WVBOOT.EXE
+
+occupies track 0 side 0 sector 1 of the Wordvison MASTER disk. It's task
+
+involves verify correct disk operation as well as verifing that this disk is
+
+indeed a Wordvision MASTER disk. WVDOS.COM ccupies 6 sectors ( track 0 side 0
+
+sector 8 to track 1 side 0 sector 5 ). It's task involves prompt user for a
+
+IBM PC DOS disk as well as the Wordvision MASTER disk on a single drive 
+
+system. All disk prompted for are verifyed before the Boot System is allowed
+
+to continue. The computer's current configuration is determined as to the
+
+type of display as well as the number of drives ( 1 drive or 2 drives ).
+
+IBM PC DOS is loaded into the computer and COMMAND.COM is then made a visible
+
+file before control is transfered to IBM PC DOS. DOS then executes and then
+
+looks for COMMAND.COM which is then loaded by IBM PC DOS. ( WVDOS.COM makes
+
+allowance for single or double sided disk for the placement of IBMBIO.COM and
+
+IBMDOS.COM vary in each case ). The third a final program of the Wordvision
+
+Boot System is COMMAND.COM. It's task is to generate a Wordvision WORKING
+
+copy for the user. As WVDOS.COM does it prompts for the appropriate disk 
+
+and then verifies it insertion in the correct drive. Formatting is done on a
+
+blank disk or when the user gives permission to erase the files on the
+
+WORKING disk. COMMAND.COM will format the WORKING disk as a single sided
+
+or double sided disk depending upon the ability of the drive. The boot track
+
+for the WORKING disk is adjusted accordingly. If the WORKING diskette is not
+
+formated it is checked to determine it's suutablity as a WORKING disk. Three
+
+conditions not being meet can cause the disk's rejection. 1) not enough space
+
+in bytes to hold the system. 2) not enough space in the directory. 3) no 
+
+IBM PC DOS system on the disk. The user is inform if any of the condition
+
+are present on the WORKING disk. The user is then asked to try another disk.
+
+Finally the actual transfer of the Wordvision MASTER files takes place. Once
+
+this has taken place the user is prompted to insert their working disk in
+
+drive A: and upon verification the system reboots. The WORIKING disk 
+
+through an autoexec.bat file loads and executes Wordvision writting tool.
+
+
+
+
+   Current limitations. The Wordvision Boot System will currently work for
+
+IBM PC DOS 1.0 and 1.1. Although it has been desinged to easily be modified
+
+to become the boot track for other Vision products, it is unable to run under
+
+IBM PC DOS 2.0. There are major differences as to the directory, file 
+
+allocation table and the location of IBMBIO.COM and IBMDOS.COM. In order to
+
+judge the current systems usefulness on IBM PC DOS 2.0 operating systems
+
+further study needs to be done.
+
+
+
+ 
+
+
+
